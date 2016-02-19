@@ -1,0 +1,22 @@
+{
+  "name": "blogram",
+  "version": "1.0.0",
+  "description": "MEAN Challenge #1: Create a fully functional blog &amp; image sharing Web Application from scratch.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurazenc/Blogram.git"
+  },
+  "author": "Laura Coalla Cencerrado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurazenc/Blogram/issues"
+  },
+  "homepage": "https://github.com/laurazenc/Blogram#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

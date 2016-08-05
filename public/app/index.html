@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="blogram">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>Blogram</title>
+
+  <!-- dependencies -->
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="vendor/angular-toasty/dist/angular-toasty.css">
+  <!-- <link rel="stylesheet" href="./vendor/ngToast/dist/ngToast.css">
+  <link rel="stylesheet" href="./vendor/ngToast/dist/ngToast-animations.css"> -->
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="vendor/angular/angular.js"></script>
+  <script type="text/javascript" src="vendor/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript" src="vendor/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="vendor/angular-sanitize/angular-sanitize.js"></script>
+  <script type="text/javascript" src="vendor/angular-toasty/dist/angular-toasty.js"></script>
+  <!-- <script type="text/javascript" src="./vendor/ngToast/dist/ngToast.js"></script> -->
+
+
+  <!-- Application -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/app.routes.js"></script>
+
+
+  <!-- Core -->
+  <script type="text/javascript" src="app/core/core.module.js"></script>
+  <script type="text/javascript" src="app/core/config.js"></script>
+  <script type="text/javascript" src="app/core/notifier.js"></script>
+
+  <!-- Session -->
+  <script type="text/javascript" src="app/session/session.module.js"></script>
+  <script type="text/javascript" src="app/session/sessionCtrl.js"></script>
+  <script type="text/javascript" src="app/session/authTokenService.js"></script>
+  <script type="text/javascript" src="app/session/authInterceptorService.js"></script>
+  <script type="text/javascript" src="app/session/authService.js"></script>
+
+  <!-- Dashboard -->
+  <script type="text/javascript" src="app/dashboard/dashboard.module.js"></script>
+  <script type="text/javascript" src="app/dashboard/dashboardCtrl.js"></script>
+
+  <!-- Profile -->
+  <script type="text/javascript" src="app/profile/profile.module.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container" ng-controller="SessionController">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Blogram</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right" ng-if="loggedIn">
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">
+            {{currentUser.email}}
+            <b class="caret"></b>
+            <ul class="dropdown-menu">
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="/" ng-click="logOut()">Logout</a></li>
+            </ul>
+          </a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right" ng-if="!loggedIn">
+        <li data-match-route="/login"><a href="/login">Login</a></li>
+        <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+  <toasty></toasty>
+  <div ng-view></div>
+</body>
+</html>

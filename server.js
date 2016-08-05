@@ -29,7 +29,7 @@ app.all('/api/*',function(req,res){
 
 // Any request is going to look for index
 app.get('*', function (req, res) {
-	res.sendFile(__dirname + '/public/app/views/index.html');
+	res.sendFile(__dirname + '/public/app/index.html');
 });
 
 // Run server

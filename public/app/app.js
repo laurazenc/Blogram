@@ -1,6 +1,17 @@
-angular.module('Blogram', ['ngResource', 'appRoutes',
-	'commonNotifier', 'angular-toasty',
-	'authService', 'mainCtrl'])
-.config(function ($httpProvider) {
-	$httpProvider.interceptors.push('AuthInterceptor');
-})
+( function () {
+	'use strict';
+	angular
+		.module('blogram', [
+			'blogram.core',
+			'blogram.routes',
+
+			'blogram.session',
+
+			'blogram.dashboard',
+			'blogram.profile'
+			// blogram.user
+			// blogram. ..
+
+		])
+
+})();
